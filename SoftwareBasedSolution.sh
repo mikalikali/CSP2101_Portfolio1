@@ -3,8 +3,8 @@
 #Software Based Solution CSP2101
 
 
-#downloads the website, and saves it to a txt file 
-#wget -p -O EcuTest.txt https://www.ecu.edu.au/service-centres/MACSC/gallery/gallery.php?folder=152 
+
+
 STD='\033[0;0;39m' #used for aligning the main menu 
 RED='\033[0;41;30m' #used for when input is incorrect, changes the message to red 
 
@@ -71,7 +71,7 @@ three() {
 
 read  FirstValue3
 until (($FirstValue3 > 1532)) && (($FirstValue3 < 2041)) ; do 
-    echo "please try again"
+    echo "please try again, enter a number between 1532 and 2041"
     read Firstvalue
 
 
@@ -81,12 +81,13 @@ done
 echo "enter second value EG: 1723 " #prompt user for inputing second value 
 read   SecondValue3 #taking users input for second value 
     until (($SecondValue3 > 1532)) && (($SecondValue3 < 2041)) ; do #checks second value is within the correct range that is being searched for 
-        echo "please try again"
+        echo "please try again, enter a number between 1532 and 2041"
         read SecondValue3 
 
 done 
     #xargs used to download mutiple urls 
-curl -0 FuncitonThree.zip https://secure.ecu.edu.au/service-centres/MACSC/gallery/152/DSC0["$FirstValue3"-"$SecondValue3"].jpg | grep -o -e 'http[^"]*\.jpg' | xargs wget 
+curl -O FunctionThree.zip https://secure.ecu.edu.au/service-centres/MACSC/gallery/152/DSC0[$FirstValue3-$SecondValue3].jpg 
+
 
 #add in correct download echo "Downloading "DSC0$Input", with the file name of "FullFilename DSC0$Input.jpg", with a file size of "File size"... file download
 #complete
