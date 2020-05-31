@@ -36,10 +36,10 @@ done
 #downloading the image from the website based on the users input, is then saved to a new folder       
 wget -0 newfolder.zip https://secure.ecu.edu.au/service-centres/MACSC/gallery/152/DSC0"$Firstvalue".jpg #wont save to new file, saves to the wroking file 
 
-echo "Downloading DSC0$Firstvalue.jpg with a file size of... file download complete"
-echo " "
-echo "PROGRAM FINISHED" 
-    
+#add in correct download echo "Downloading "DSC0$Input", with the file name of "FullFilename DSC0$Input.jpg", with a file size of "File size"... file download
+#complete
+#PROGRAM FINISHED 
+echo "PROGRAM FINISHED"
 } 
 
 #Download every thumbnail from the wesbite to the working file (try and download to a new folder)
@@ -52,6 +52,10 @@ two() {
     curl -0 FunctionTwo.zip https://www.ecu.edu.au/service-centres/MACSC/gallery/gallery.php?folder=152 | grep -o -e 'http[^"]*\.jpg' | xargs wget 
     echo "you have downloaded every .jpg file  on the website"
 
+#add in correct download echo "Downloading "DSC0$Input", with the file name of "FullFilename DSC0$Input.jpg", with a file size of "File size"... file download
+#complete
+#PROGRAM FINISHED 
+echo "PROGRAM FINISHED"
 } 
 
 #downloads images in a range specified by the user 
@@ -84,6 +88,10 @@ done
     #xargs used to download mutiple urls 
 curl -0 FuncitonThree.zip https://secure.ecu.edu.au/service-centres/MACSC/gallery/152/DSC0["$FirstValue3"-"$SecondValue3"].jpg | grep -o -e 'http[^"]*\.jpg' | xargs wget 
 
+#add in correct download echo "Downloading "DSC0$Input", with the file name of "FullFilename DSC0$Input.jpg", with a file size of "File size"... file download
+#complete
+#PROGRAM FINISHED 
+echo "PROGRAM FINISHED"
 } 
 
 #function 4 to be called upon by menu 
@@ -127,6 +135,7 @@ done
 
    # else : 
    # echo 
+echo "PROGRAM FINISHED"
 } 
 
 #displays a user frindly menu for the user to choose from. 
